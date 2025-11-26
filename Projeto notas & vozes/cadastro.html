@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de Aluno — Notas & Vozes</title>
+  <link rel="stylesheet" href="assets/css/cadastro.css" />
+</head>
+<body>
+  <header>
+    <h1>🎵 Notas & Vozes</h1>
+    <p>Cadastro de novos alunos</p>
+  </header>
+
+  <main>
+    <section class="form-box">
+      <h2>📋 Formulário de Cadastro</h2>
+      <form action="cadastro.php" method="post">
+        <input type="text" name="nome" placeholder="Nome completo" required />
+        <input type="number" name="idade" placeholder="Idade" required />
+        <input type="password" name="senha" placeholder="Crie uma senha" required />
+        
+        <label for="curso">Curso:</label>
+        <select name="curso" required>
+          <option value="canto">Canto</option>
+          <option value="piano">Piano</option>
+        </select>
+
+        <input type="text" name="horarios" placeholder="Disponibilidade de horários" required />
+        <input type="tel" name="telefone" placeholder="Telefone (opcional)" />
+
+        <button type="submit">Cadastrar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Notas & Vozes — Estúdio Musical da Professora Ana</p>
+  </footer>
+</body>
+</html>
