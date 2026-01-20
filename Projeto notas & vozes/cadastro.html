@@ -8,14 +8,14 @@
 </head>
 <body>
   <header>
-    <h1>🎵 Notas & Vozes</h1>
+    <h1>Notas & Vozes</h1>
     <p>Cadastro de novos alunos</p>
   </header>
 
   <main>
     <section class="form-box">
-      <h2>📋 Formulário de Cadastro</h2>
-      <form action="cadastro.php" method="post">
+      <h2>Formulário de Cadastro</h2>
+      <form action="assets/php/cadastro.php" method="post">
         <input type="text" name="nome" placeholder="Nome completo" required />
         <input type="number" name="idade" placeholder="Idade" required />
         <input type="password" name="senha" placeholder="Crie uma senha" required />
@@ -25,8 +25,20 @@
           <option value="canto">Canto</option>
           <option value="piano">Piano</option>
         </select>
+        
+        <label for="dias">Dias:</label>
+        <select name="dias" id="dias">
+          <option value="segunda">Segunda</option>
+          <option value="terça">Terça</option>
+          <option value="quinta">Quinta</option>
+          <option value="sexta">Sexta</option>
+        </select>
+        <label for="horarios"></label>
+        <select name="horarios" id="horarios">
+          <option value="tarde">turno da tarde </option>
+          <option value="noite">turno da noite</option>
+        </select>
 
-        <input type="text" name="horarios" placeholder="Disponibilidade de horários" required />
         <input type="tel" name="telefone" placeholder="Telefone (opcional)" />
 
         <button type="submit">Cadastrar</button>
