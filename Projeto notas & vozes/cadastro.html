@@ -2,52 +2,68 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cadastro de Aluno — Notas & Vozes</title>
+  <title>Cadastro — Notas & Vozes</title>
   <link rel="stylesheet" href="assets/css/cadastro.css" />
 </head>
 <body>
-  <header>
-    <h1>Notas & Vozes</h1>
-    <p>Cadastro de novos alunos</p>
-  </header>
 
-  <main>
-    <section class="form-box">
-      <h2>Formulário de Cadastro</h2>
-      <form action="assets/php/cadastro.php" method="post">
-        <input type="text" name="nome" placeholder="Nome completo" required />
-        <input type="number" name="idade" placeholder="Idade" required />
-        <input type="password" name="senha" placeholder="Crie uma senha" required />
-        
-        <label for="curso">Curso:</label>
-        <select name="curso" required>
-          <option value="canto">Canto</option>
-          <option value="piano">Piano</option>
-        </select>
-        
-        <label for="dias">Dias:</label>
-        <select name="dias" id="dias">
-          <option value="segunda">Segunda</option>
-          <option value="terça">Terça</option>
-          <option value="quinta">Quinta</option>
-          <option value="sexta">Sexta</option>
-        </select>
-        <label for="horarios"></label>
-        <select name="horarios" id="horarios">
-          <option value="tarde">turno da tarde </option>
-          <option value="noite">turno da noite</option>
-        </select>
+<header>
+  <h1>Notas & Vozes</h1>
+  <p>Cadastro de novos alunos</p>
+</header>
 
-        <input type="tel" name="telefone" placeholder="Telefone (opcional)" />
+<main>
+  <section class="form-box">
+    <h2>Formulário de Cadastro</h2>
 
-        <button type="submit">Cadastrar</button>
-      </form>
-    </section>
-  </main>
+    <form id="formCadastro">
 
-  <footer>
-    <p>© 2025 Notas & Vozes — Estúdio Musical da Professora Ana</p>
-  </footer>
+      <input type="text" id="nome" name="nome" placeholder="Nome completo" required />
+      <small class="erro-obrigatorio" data-for="nome">Campo obrigatório</small>
+
+      <input type="number" id="idade" name="idade" placeholder="Idade" min="6" max="120" required />
+      <small class="erro-obrigatorio" data-for="idade">Campo obrigatório</small>
+
+      <input type="password" id="senha" name="senha" placeholder="Crie uma senha" required />
+      <small class="erro-senha">
+        A senha deve ter no mínimo 6 caracteres, letras, números e símbolos
+      </small>
+
+      <input type="tel" id="telefone" name="telefone" placeholder="Telefone" required />
+      <small class="erro-obrigatorio" data-for="telefone">Campo obrigatório</small>
+
+      <select id="curso" name="curso" required>
+        <option value="">Selecione o curso</option>
+        <option value="canto">Canto</option>
+        <option value="piano">Piano</option>
+      </select>
+      <small class="erro-obrigatorio" data-for="curso">Campo obrigatório</small>
+
+      <select id="dias" name="dias" required>
+        <option value="">Selecione o dia</option>
+        <option value="segunda">Segunda</option>
+        <option value="terça">Terça</option>
+        <option value="quinta">Quinta</option>
+        <option value="sexta">Sexta</option>
+      </select>
+      <small class="erro-obrigatorio" data-for="dias">Campo obrigatório</small>
+
+      <select id="horarios" name="horarios" required>
+        <option value="">Selecione o horário</option>
+        <option value="tarde">Tarde</option>
+        <option value="noite">Noite</option>
+      </select>
+      <small class="erro-obrigatorio" data-for="horarios">Campo obrigatório</small>
+
+      <div class="msg erro-msg" id="msgErro"></div>
+      <div class="msg sucesso-msg" id="msgSucesso">Cadastro realizado com sucesso!</div>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+  </section>
+</main>
+
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/cadastro.js"></script>
 </body>
 </html>
